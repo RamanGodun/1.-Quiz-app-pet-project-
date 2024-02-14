@@ -1,0 +1,36 @@
+{
+   "version": "0.2.0",
+   "configurations": [
+      {
+         "name": "_first",
+         "request": "launch",
+         "type": "dart"
+      },
+ {
+   "name": "Pixel",
+   "request": "launch",
+   "type": "dart",
+   "deviceId": "Pixel_3a_API_34_extension_level_7_arm64-v8a",
+ }, 
+ {
+   "name": "IPhone15",
+   "request": "launch",
+   "type": "dart",
+   "deviceId": "iOS Simulator",
+ }, 
+
+ {
+   "name": "G-Chrome",
+   "request": "launch",
+   "type": "dart",
+   "deviceId": "chrome",
+ }, 
+   ],
+
+   "compounds": [
+      {
+         "name": "All devices",
+         "configurations": ["Pixel", "IPhone15", "G-Chrome"]
+      }
+   ]
+}

@@ -10,13 +10,10 @@ class StartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //
+    ///
     final primaryColor =
         CupertinoTheme.of(context).primaryColor.withOpacity(0.8);
     final onPrimaryColor = Theme.of(context).colorScheme.onPrimary;
-
-    const sizedBoxHeight = 40.0;
-    const buttonText = 'Of course';
 
     return CupertinoPageScaffold(
       backgroundColor: kDarkTheme.canvasColor,
@@ -38,7 +35,7 @@ class StartScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: _buildTextStyle(context),
               ),
-              const SizedBox(height: sizedBoxHeight),
+              const SizedBox(height: 40),
               SizedBox(
                 width: double.infinity,
                 child: CupertinoButton.filled(
@@ -51,7 +48,7 @@ class StartScreen extends StatelessWidget {
                       Icon(CupertinoIcons.play_arrow, color: onPrimaryColor),
                       const SizedBox(width: 8),
                       Text(
-                        buttonText,
+                        'Of course',
                         style: _buildButtonTextStyle(context),
                       ),
                     ],

@@ -49,21 +49,6 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
               ),
             );
           })
-          // ListView.builder(
-          //     itemCount: currentQuestion.shuffledAnswers.length,
-          //     itemBuilder: (context, index) {
-          //       final answer = currentQuestion.shuffledAnswers[index];
-          //       return Padding(
-          //         padding: const EdgeInsets.symmetric(vertical: 8.0),
-          //         child: AnswerButton(
-          //           answerText: answer,
-          //           onTap: () {
-          //             answerQuestion(answer);
-          //           },
-          //         ),
-          //       );
-          //     },
-          //   ),
         ],
       ),
     );
@@ -72,11 +57,8 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
   void answerQuestion(String selectedAnswer) {
     widget.onSelectAnswer(selectedAnswer);
     setState(() {
-      if (currentQuestionIndex < qAnswers.length - 1) {
-        currentQuestionIndex++;
-      } else {
-        // Ви можете взяти додаткові дії, якщо це останнє питання.
-      }
+      currentQuestionIndex++;
     });
   }
+  //
 }

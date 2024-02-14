@@ -10,14 +10,15 @@ class SummaryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final isCorrectAnswer =
         itemData['user_answer'] == itemData['correct_answer'];
+    final dividerWidget = Divider(
+      thickness: 0.1,
+      color: Theme.of(context).dividerColor,
+    );
 
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Divider(
-          thickness: 0.1,
-          color: Theme.of(context).dividerColor,
-        ),
+        dividerWidget,
         Row(
           children: [
             Align(
@@ -65,10 +66,7 @@ class SummaryItem extends StatelessWidget {
             ),
           ],
         ),
-        Divider(
-          thickness: 0.1,
-          color: Theme.of(context).dividerColor,
-        ),
+        dividerWidget,
       ],
     );
   }

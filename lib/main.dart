@@ -48,9 +48,8 @@ class _RootWidgetState extends State<RootWidget> {
   }
 
   Widget _buildCurrentScreenWidget() {
-    Widget startScreen = StartScreen(_switchToQuestionsScreen);
     Widget currentScreenWidget = _activeScreenName == 'startScreenName'
-        ? startScreen
+        ? StartScreen(_switchToQuestionsScreen)
         : _buildNonStartScreen();
 
     return currentScreenWidget;

@@ -43,6 +43,8 @@ class ResultsScreen extends StatelessWidget {
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 3, vertical: 70),
         child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             myDivider,
             Padding(

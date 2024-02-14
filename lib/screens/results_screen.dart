@@ -32,6 +32,7 @@ class ResultsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const myDivider = Divider(thickness: 0.3);
     final numTotalQuestions = qAnswers.length;
     final numCorrectQuestions = summaryData
         .where((data) => data['user_answer'] == data['correct_answer'])
@@ -40,24 +41,22 @@ class ResultsScreen extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 70),
+        margin: const EdgeInsets.symmetric(horizontal: 3, vertical: 70),
         child: Column(
           children: [
-            const Divider(),
-            Text(
-              'You answered $numCorrectQuestions out of $numTotalQuestions questions correctly!',
-              style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    fontWeight: FontWeight.bold,
-                    color: Theme.of(context).colorScheme.onPrimary,
-                  ),
-              textAlign: TextAlign.center,
+            myDivider,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10.0),
+              child: TitleTextWidget(
+                  numCorrectQuestions: numCorrectQuestions,
+                  numTotalQuestions: numTotalQuestions),
             ),
-            const Divider(),
+            myDivider,
             const SizedBox(height: 10),
             Expanded(
               child: QuestionsSummary(summaryData),
             ),
-            const Divider(),
+            myDivider,
             Padding(
               padding: const EdgeInsets.only(top: 10.0),
               child: TextButton.icon(
@@ -81,6 +80,56 @@ class ResultsScreen extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class TitleTextWidget extends StatelessWidget {
+  const TitleTextWidget({
+    super.key,
+    required this.numCorrectQuestions,
+    required this.numTotalQuestions,
+  });
+
+  final int numCorrectQuestions;
+  final int numTotalQuestions;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text.rich(
+      TextSpan(
+        text: 'You answered ',
+        style: Theme.of(context).textTheme.titleLarge?.copyWith(
+              color: Theme.of(context).colorScheme.onPrimary,
+            ),
+        children: [
+          TextSpan(
+            text: '$numCorrectQuestions',
+            style: const TextStyle(
+              color: Colors.green,
+            ),
+          ),
+          TextSpan(
+            text: ' out of ',
+            style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                  color: Theme.of(context).colorScheme.onPrimary,
+                ),
+          ),
+          TextSpan(
+            text: '$numTotalQuestions',
+            style: const TextStyle(
+              color: Colors.green,
+            ),
+          ),
+          TextSpan(
+            text: ' questions correctly!',
+            style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                  color: Theme.of(context).colorScheme.onPrimary,
+                ),
+          ),
+        ],
+      ),
+      textAlign: TextAlign.center,
     );
   }
 }

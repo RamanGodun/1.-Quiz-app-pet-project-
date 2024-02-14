@@ -12,6 +12,7 @@ class SummaryItem extends StatelessWidget {
         itemData['user_answer'] == itemData['correct_answer'];
 
     return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
         Divider(
           thickness: 0.1,
@@ -36,7 +37,7 @@ class SummaryItem extends StatelessWidget {
                     itemData['question'] as String,
                     Theme.of(context).textTheme.bodyMedium?.copyWith(
                           color: Theme.of(context).colorScheme.background,
-                          fontSize: 16,
+                          fontSize: 14,
                         ),
                   ),
                   const SizedBox(height: 5),
@@ -44,7 +45,10 @@ class SummaryItem extends StatelessWidget {
                     context,
                     itemData['user_answer'] as String,
                     Theme.of(context).textTheme.bodySmall?.copyWith(
-                          color: Theme.of(context).colorScheme.secondary,
+                          color: Theme.of(context)
+                              .colorScheme
+                              .secondary
+                              .withOpacity(0.6),
                           fontSize: 13,
                         ),
                   ),

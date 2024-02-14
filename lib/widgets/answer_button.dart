@@ -1,4 +1,6 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:questionary/data/theme_data.dart';
 
 class AnswerButton extends StatelessWidget {
   const AnswerButton({
@@ -14,12 +16,15 @@ class AnswerButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return CupertinoButton(
       onPressed: onTap,
-      color: CupertinoColors.systemBlue.withOpacity(0.7),
+      color: getCupertinoTheme().primaryColor,
       padding: const EdgeInsets.all(16.0),
       child: Text(
         answerText,
         textAlign: TextAlign.center,
-        style: CupertinoTheme.of(context).textTheme.textStyle,
+        style: Theme.of(context)
+            .textTheme
+            .bodyMedium
+            ?.copyWith(fontSize: 16, fontWeight: FontWeight.w300),
       ),
     );
   }

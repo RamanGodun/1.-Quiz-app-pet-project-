@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -6,6 +7,7 @@ const Color kOnPrimaryColor = Colors.white;
 
 final kDarkColorScheme = ColorScheme.fromSeed(
   seedColor: const Color.fromARGB(255, 121, 240, 238),
+  secondary: const Color.fromARGB(255, 200, 242, 250),
 ).copyWith();
 
 final kDarkTheme = ThemeData.dark().copyWith(
@@ -23,6 +25,16 @@ final kDarkTheme = ThemeData.dark().copyWith(
   ),
   textTheme: kTextThemeData,
 );
+
+CupertinoThemeData getCupertinoTheme() {
+  return CupertinoThemeData(
+    primaryColor: CupertinoColors.systemBlue.withOpacity(0.7),
+    scaffoldBackgroundColor: kDarkTheme.canvasColor,
+    // textTheme: const CupertinoTextThemeData()
+    //     .copyWith(textStyle: kDarkTheme.textTheme.bodyLarge),
+    // Інші параметри теми Cupertino
+  );
+}
 
 final kTextThemeData = GoogleFonts.montserratAlternatesTextTheme().copyWith(
   titleMedium: const TextStyle(

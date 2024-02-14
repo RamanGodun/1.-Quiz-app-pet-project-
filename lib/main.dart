@@ -15,7 +15,7 @@ void main() {
   ]).then((_) {
     runApp(
       MaterialApp(
-        darkTheme: kDarkTheme.copyWith(),
+        darkTheme: kDarkTheme,
         themeMode: ThemeMode.dark,
         debugShowCheckedModeBanner: false,
         home: const RootWidget(),
@@ -40,16 +40,10 @@ class _RootWidgetState extends State<RootWidget> {
 
   @override
   Widget build(BuildContext context) {
-    ///
     Widget currentScreenWidget = _buildCurrentScreenWidget();
 
-    return CupertinoTheme(
-      data: CupertinoThemeData(
-        scaffoldBackgroundColor: kDarkTheme.canvasColor,
-      ),
-      child: CupertinoPageScaffold(
-        child: currentScreenWidget,
-      ),
+    return CupertinoPageScaffold(
+      child: currentScreenWidget,
     );
   }
 

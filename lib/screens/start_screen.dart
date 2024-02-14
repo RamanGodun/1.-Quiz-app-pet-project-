@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../data/theme_data.dart';
+
 class StartScreen extends StatelessWidget {
   const StartScreen(this.startQuiz, {super.key});
 
@@ -17,6 +19,7 @@ class StartScreen extends StatelessWidget {
     const buttonText = 'Of course';
 
     return CupertinoPageScaffold(
+      backgroundColor: kDarkTheme.canvasColor,
       child: Center(
         child: Padding(
           padding: const EdgeInsets.all(15.0),
@@ -63,9 +66,10 @@ class StartScreen extends StatelessWidget {
   }
 
   TextStyle _buildTextStyle(BuildContext context) {
-    return CupertinoTheme.of(context).textTheme.textStyle.copyWith(
-          fontSize: 19,
-          fontWeight: FontWeight.w600,
+    return getCupertinoTheme().textTheme.textStyle.copyWith(
+          fontSize: 18,
+          fontWeight: FontWeight.w300,
+          color: getCupertinoTheme().primaryContrastingColor,
         );
   }
 

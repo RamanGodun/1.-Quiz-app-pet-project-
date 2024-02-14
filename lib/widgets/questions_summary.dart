@@ -8,14 +8,14 @@ class QuestionsSummary extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 450,
-      child: ListView.builder(
-        itemCount: summaryData.length,
-        itemBuilder: (context, index) {
-          return SummaryItem(summaryData[index]);
-        },
-      ),
+    return ListView.builder(
+      itemCount: summaryData.length,
+      itemBuilder: (context, index) {
+        return Padding(
+          padding: const EdgeInsets.only(left: 15.0, right: 5),
+          child: SummaryItem(summaryData[index]),
+        );
+      },
     );
   }
 }

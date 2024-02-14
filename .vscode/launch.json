@@ -10,13 +10,20 @@
    "name": "Pixel",
    "request": "launch",
    "type": "dart",
-   "deviceId": "Pixel_3a_API_34_extension_level_7_arm64-v8a",
+   "deviceId": "Pixel_3a_API_34_extension_level_7_flarm64-v8a",
  }, 
  {
    "name": "IPhone15",
    "request": "launch",
    "type": "dart",
    "deviceId": "iOS Simulator",
+ }, 
+
+ {
+   "name": "Redmmi",
+   "request": "launch",
+   "type": "dart",
+   "deviceId": "1ef146a7",
  }, 
 
  {

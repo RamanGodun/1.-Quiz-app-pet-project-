@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import '../widgets/answer_button.dart';
 import '../data/data_storage.dart';
 
@@ -22,7 +23,6 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
       padding:
           const EdgeInsets.only(left: 16.0, right: 16, bottom: 50, top: 70),
       child: Column(
-        // mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           const SizedBox(height: 130),
@@ -31,7 +31,10 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
             style: CupertinoTheme.of(context)
                 .textTheme
                 .navLargeTitleTextStyle
-                .copyWith(fontWeight: FontWeight.w700, fontSize: 20),
+                .copyWith(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 20,
+                    color: Theme.of(context).colorScheme.onPrimary),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 20),
